@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SM!LES Crowd Delivery</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style type="text/css"> .fa_custom { color: white } </style>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+        </script>
+        <script>  
+            $(function(){ 
+                $("#menu").load("../menu.php");  
+            }); 
+        </script>
+        <script>  
+            $(function(){ 
+                $("#footer").load("../footer.html");  
+            }); 
+        </script> 
+    </head>
+
+    <body>
+        <div id="menu"></div>
+
+        <div class="container4">
+            <div class="launch_info_end"></div>
+                
+                <h2 style="color: #7448b1; font-size: 40px; text-align: center; margin-top: 25px; margin-bottom: 0px;">Bezorgen!</h2>
+
+                <div class="flex-container-4" style="padding-top: 50px; padding-bottom: 100px;">
+                    <div class="flex-child-4 left" style="padding-left: 50px; padding-right: 50px;">
+                        <img src="images/online.jpg" style="width: 50%; margin-left: 25%; padding-top: 25px;">
+                        
+                        <p>Wil jij ook wel iets voor een ander bezorgen? Wanneer 1 van jouw contactpersonen een versoek plaatst op het Versoek platform, kun jij dat zien en actie ondernemen!</p>
+                        <p>Misschien heeft jouw buurman iets nodig? Of jouw tante? Of is jouw collega iets vergeten? Jij kan het voor ze meenemen! Daarmee help jij niet alleen hun maar ook het milieu!</p>
+                    </div>
+
+                    
+                </div>
+                <button onclick="window.location.href='news.php';" class="button_meld_aan" style="margin-top: 0px; padding-bottom: 50px; position: absolute; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">Meer nieuws</button>
+
+            <div class="main_end2"></div>
+            <div class="page_end"></div>
+            <div id="footer"></div>
+        </div>
+    </body>
+</html>

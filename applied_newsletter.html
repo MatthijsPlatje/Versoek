@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Versoek</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style type="text/css"> .fa_custom { color: white } </style>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+        </script>
+        <script>  
+            $(function(){ 
+                $("#menu").load("menu.php");  
+            }); 
+        </script>
+        <script>  
+            $(function(){ 
+                $("#footer").load("footer.html");  
+            }); 
+        </script> 
+    </head>
+
+    <body>
+        <div class="container_nav">
+            <div class="nav_img">
+                <img src="../images/Logo_smiles_RGB_StudioTW.webp" alt="smiles logo">
+                <div class="nav_container">
+                    <div class="nav">
+                        <a href="#">OVER ONS</a>
+                        <a href="#">DE LANCERING</a>
+                        <a href="login.html">INLOGGEN</a>
+                        <a class="contact" href="index.php">HOME <i class="fa fa-home fa_custom"></i></a>
+                    </div>
+                </div>
+            </div>
+            <main>
+                <h1>Versoek</h1>
+                <p>Je bent aangemeld voor de nieuwsbrief!</p>
+            </main>
+            <div class="main_end"></div>
+        </div>
+
+        <div class="container">
+            <div class="launch_info">
+                <div class="contact_form">
+                    <p>Bedankt, je bent nu aangemeld voor de Versoek nieuwsbrief!</p>
+                </div>
+                
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>

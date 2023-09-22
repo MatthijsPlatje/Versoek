@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SM!LES Crowd Delivery</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style type="text/css"> .fa_custom { color: white } </style>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+        </script>
+        <script>  
+            $(function(){ 
+                $("#menu").load("menu.php");  
+            }); 
+        </script>
+        <script>  
+            $(function(){ 
+                $("#footer").load("footer.html");  
+            }); 
+        </script> 
+    </head>
+
+    <body>
+        <div class="container_nav">
+            <div class="nav_img">
+                <img src="images/Logo_smiles_RGB_StudioTW.webp" alt="smiles logo">
+                <div class="nav_container">
+                    <div class="nav">
+                        <a href="about_us.html">OVER ONS</a>
+                        <a href="launch.html">DE LANCERING</a>
+                        <a href="contact.html">CONTACT</a>
+                        <a class="contact" href="index.php">HOME <i class="fa fa-home fa_custom"></i></a>
+                    </div>
+                </div>
+            </div>
+            <main>
+                <h1>About SM!LES</h1>
+                <p>The new Crowd Logistics Solution</p>
+            </main>
+            <div class="main_end"></div>
+        </div>
+
+        <div class="container">
+            <div class="launch_info">
+                <div class="contact_form">
+                    <form action="action_page.php">
+
+                        <label for="user">User Name</label>
+                        <input type="text" id="user" name="username" placeholder="Your username..">
+                    
+                        <label for="pw">Last Name</label>
+                        <input type="text" id="pw" name="password" placeholder="Your password">
+                    
+                        <input type="submit" value="Login">
+                    
+                    </form>
+                </div>
+
+                <div id="footer"></div>
+            </div>
+        </div>
+    </body>
+</html>

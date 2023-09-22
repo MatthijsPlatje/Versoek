@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SM!LES Crowd Delivery</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style type="text/css"> .fa_custom { color: white } </style>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+        </script>
+        <script>  
+            $(function(){ 
+                $("#menu").load("menu.php");  
+            }); 
+        </script>
+        <script>  
+            $(function(){ 
+                $("#footer").load("footer.html");  
+            }); 
+        </script> 
+    </head>
+
+    <body>
+        <div id="menu"></div>        
+
+        <div class="container">
+            <div class="launch_info">
+
+                <h2 style="color: #7448b1; font-size: 40px; text-align: center; margin-top: 0px; margin-bottom: 0px;">De lancering</h2><hr>
+
+                <div class="contact_form" style="padding-top: 20px; padding-bottom: 50px; text-align: justify;">
+                    <p>Binnenkort lanceren wij de eerste versie van dit nieuwe platform</p>
+                    <p>Op dit moment zijn we bezig met de eerste testen met gebruikers. Dit zijn gesloten testen waar alleen mensen aan mee kunnen doen die daarvoor zijn uitgenodigd. Op basis van de resultaten, zullen onderdelen worden toegevoegd of gewijzigd. Wij hopen natuurlijk dat het platform succesvol blijkt en dat we het in de toekomst kunnen uitbreiden naar een steeds grotere groep gebruikers. Uiteindelijk moet het platform voor iedereen beschikbaar komen.</p>
+                    <p>Je kunt je abboneren op onze nieuwsbrief zodat je automatisch op de hoogte wordt gehouden van de ontwikkelingen van ons platform.</p>
+                    
+                    <div style="margin-top: 32px; text-align: center;">
+                        <button onclick="window.location.href='apply_newsletter.html';" class="button_meld_aan">Meld je aan voor de nieuwsbrief!</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page_end"></div>
+            <div id="footer"></div>
+        </div>
+    </body>
+</html>

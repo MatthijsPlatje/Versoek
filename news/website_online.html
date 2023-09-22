@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SM!LES Crowd Delivery</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <style type="text/css"> .fa_custom { color: white } </style>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+        </script>
+        <script>  
+            $(function(){ 
+                $("#menu").load("../menu.php");  
+            }); 
+        </script>
+        <script>  
+            $(function(){ 
+                $("#footer").load("../footer.html");  
+            }); 
+        </script> 
+    </head>
+
+    <body>
+        <div id="menu"></div>
+
+        <div class="container4">
+            <div class="launch_info_end"></div>
+                
+                <h2 style="color: #7448b1; font-size: 40px; text-align: center; margin-top: 25px; margin-bottom: 0px;">Website online!</h2>
+
+                <div class="flex-container-4" style="padding-top: 50px; padding-bottom: 100px;">
+                    <div class="flex-child-4 left" style="padding-left: 50px; padding-right: 50px;">
+                        <img src="images/online.jpg" style="width: 50%; margin-left: 25%; padding-top: 25px;">
+                        
+                        <p>Hoera! De website voor Versoek.nl is online! Na diverse prototypes, is dit het resultaat. Kijk rustig rond en lees de informatie.</p>
+                        <p>Wanneer je vragen of opmerkingen hebt, horen wij dat graag! Je kunt hiervoor het contact forumulier gebruiken (rechts boven deze pagina, bij CONTACT).</p>
+                        <p>Je kunt je aanmelden voor de nieuwsbrief (zie start pagina). Je blijft dan op de hoogte van de ontwikkelingen en je kunt uitgenodigd worden om deel te nemen aan het Versoek platform!</p>
+                    </div>
+
+                    
+                </div>
+                <button onclick="window.location.href='news.php';" class="button_meld_aan" style="margin-top: 0px; padding-bottom: 50px; position: absolute; left: 50%; -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);">Meer nieuws</button>
+
+            <div class="main_end2"></div>
+            <div class="page_end"></div>
+            <div id="footer"></div>
+        </div>
+    </body>
+</html>
