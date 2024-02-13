@@ -1,12 +1,12 @@
 <?PHP
-    require_once("./include/membersite_config.php");
+    require_once("../include/membersite_config.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Versoek</title>
-        <base href="\">
+        <title>Carpool Versoek</title>
+        <base href="\carpool">
         <link rel="icon" href="../images/smile_icon.png">
         <!--<meta name="viewport" content="width=1080px, initial-scale=1" />-->
         
@@ -41,7 +41,7 @@
 
         <div id="consent-popup" class="hidden disabled">
             <p>
-               Wil jij een cookie van ons? Voor meer informatie, lees onze <a href="terms.html" style="color: #fff;">voorwaarden</a>.<br>
+               Wil jij een cookie van ons? Voor meer informatie, lees onze <a href="voorwaarden.html" style="color: #fff;">voorwaarden</a>.<br>
                <a id="denied" href="#" style="color: rgb(252, 244, 164);">Nee bedankt, ik haat cookies!</a> <a id="accept" href="#">Ja graag, ik hou van cookies!</a>
             </p>
         </div>
@@ -79,8 +79,8 @@
                 <p style="margin-top: 4px; margin-bottom: 12px; color: white; background-color: orange; font-weight: bold;">Nog niet alles is functioneel of visueel in orde</p> 
                 -->
 
-                <h1>Versoek</h1>
-                <p>Het vriendelijke bezorg platform</p>
+                <h1>Carpool versoek</h1>
+                <p>Het vriendelijke carpool platform</p>
                 <a class="voor_jou" href="for_you.html">Voor jou!</a>
                 <a class="door_jou" href="by_you.html">Door jou!</a>
             </main>

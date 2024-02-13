@@ -37,21 +37,21 @@
 
                 <h2 style="color: #7448b1; font-size: 40px; text-align: center; margin-top: 25px; margin-bottom: 0px;">Nieuwsberichten</h2><hr>
 
-                <?php
-                    $query = $fgmembersite->GetNewsItems();
+            <?php
+                $query = $fgmembersite->GetNewsItems();
+                $div_end = false;
+                $index = 0;
+                while ($row = sqlsrv_fetch_array($query))
+                {
                     $div_end = false;
-                    $index = 0;
-                    while ($row = sqlsrv_fetch_array($query))
-                    {
-                        $div_end = false;
-                        
-                        $index++;
-                        if($index > 3)
-                            $index = 1;
+                    
+                    $index++;
+                    if($index > 3)
+                        $index = 1;
 
-                        if($index == 1)
-                            echo '<div class="flex-container-4" style="padding-top: 50px; padding-bottom: 100px;">';
-                ?>
+                    if($index == 1)
+                        echo '<div class="flex-container-4" style="padding-top: 50px; padding-bottom: 100px;">';
+            ?>
 
                 <div class="flex-child-4 <?php echo ($index == 1 ? 'left' : ($index == 2 ? 'middle' : 'right'));?>">
                     <img src="news/images/<?php echo $row['image'];?>" width="100%" alt="Bezorger">
@@ -62,14 +62,14 @@
                     <p class="date_of_article">&#x1F4C5 <?php echo $row['published']->format('d/m/Y');?></p>
                 </div>
             
-                <?php
-                    if($index == 3)
-                    {
-                        echo '</div>';
-                        $div_end = true;
-                    }
+            <?php
+                if($index == 3)
+                {
+                    echo '</div>';
+                    $div_end = true;
                 }
-                ?>
+            }
+            ?>
 
             <?php
                 if($div_end == false)

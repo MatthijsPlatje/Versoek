@@ -120,7 +120,7 @@
                     }
                     else
                     {
-                        var jqxhr = $.post("email_subscription/subscription.php", {send_email:1, fname:fname, lname:lname, email:email, body:body}, function(data) {
+                        var jqxhr = $.post("../email_subscription/subscription.php", {send_email:1, carpool:1, fname:fname, lname:lname, email:email, body:body}, function(data) {
                             if(data.endsWith("ok"))
                             {
                                 $('#subsFrm')[0].reset();

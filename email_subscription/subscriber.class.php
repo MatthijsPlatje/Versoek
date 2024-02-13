@@ -12,7 +12,7 @@ class Subscriber {
     private $dbUsername = DB_USERNAME; 
     private $dbPassword = DB_PASSWORD; 
     private $dbName     = DB_NAME; 
-    private $userTbl    = 'subscribers'; 
+    private $userTbl    = 'carpool_subscribers'; 
      
     function __construct()
     { 

@@ -44,8 +44,8 @@ class FGMembersite
     //-----Initialization -------
     function FGMembersite()
     {
-        $this->sitename = 'versoek.nl';
-        $this->rand_key = '0iQx5oBk66oVZep';
+        $this->sitename = 'carpool.versoek.nl';
+        $this->rand_key = '0iQx5oBk66oVZeq';
     }
     
     function InitDB($host,$uname,$pwd,$database,$tablename)
@@ -108,7 +108,7 @@ class FGMembersite
     {
         if(empty($_GET['code'])||strlen($_GET['code'])<=10)
         {
-            $this->HandleError("Geef de bevestigingscode op");
+            $this->HandleError("Vul de bevestigingscode in");
             return false;
         }
 
@@ -135,7 +135,7 @@ class FGMembersite
         
         if(empty($_POST['password']))
         {
-            $this->HandleError("Paswoord ontbreekt!");
+            $this->HandleError("Wachtwoord ontbreekt!");
             return false;
         }
         
@@ -181,12 +181,12 @@ class FGMembersite
         $price = $_POST['price'];
         $date = $_POST['date'];
 
-        $sql = "INSERT INTO requests (user_id, item_name, item_description, item_location, accepted)
+        $sql = "INSERT INTO carpool_requests (user_id, item_name, item_description, item_location, accepted)
             VALUES ('$id', '$name','$description','$location','0')";
 
         if (!sqlsrv_query($this->connection, $sql))
         {
-            $this->HandleDBError("Error inserting data to the table\nquery:$sql");
+            $this->HandleDBError("Toevoegen aan database mislukt: \nquery:$sql");
             return false;
         }        
         return true;
@@ -203,11 +203,11 @@ class FGMembersite
         $id = $_SESSION['id_of_user'];
         $name = $_POST['request_name'];
 
-        $sql = "DELETE FROM requests WHERE user_id='$id' AND item_name='$name'";
+        $sql = "DELETE FROM carpool_requests WHERE user_id='$id' AND item_name='$name'";
 
         if (!sqlsrv_query($this->connection, $sql))
         {
-            $this->HandleDBError("Error removing data from the table\nquery:$sql");
+            $this->HandleDBError("Verwijderen van database mislukt: \nquery:$sql");
             return false;
         }        
         return true;
@@ -222,7 +222,7 @@ class FGMembersite
         }  
 
         $id = $_SESSION['id_of_user'];
-        $sql = "SELECT * FROM requests WHERE user_id=$id";
+        $sql = "SELECT * FROM carpool_requests WHERE user_id=$id";
         $query1 = sqlsrv_query($this->connection, $sql);
 
         return $query1;
@@ -237,13 +237,13 @@ class FGMembersite
         }  
 
         $id = $_SESSION['id_of_user'];
-        $sql1 = "SELECT * FROM requests Except SELECT * FROM requests WHERE user_id=$id";
+        $sql1 = "SELECT * FROM carpool_requests Except SELECT * FROM carpool_requests WHERE user_id=$id";
         $query1 = sqlsrv_query($this->connection, $sql1);
 
         while($row = mssql_fetch_assoc($query1)) {
             $fromID = $row['user_id'];
 
-            $sql2 = "SELECT * FROM members WHERE id_user=$fromID";
+            $sql2 = "SELECT * FROM carpool_members WHERE id_user=$fromID";
             $query2 = sqlsrv_query($this->connection, $sql2);
             $rowOfUser = mssql_fetch_assoc($query2);
             $fromName = $rowOfUser["name"];
@@ -263,7 +263,7 @@ class FGMembersite
         }  
 
         $id = $_SESSION['id_of_user'];
-        $sql1 = "SELECT contacts FROM members WHERE id_user=$id";
+        $sql1 = "SELECT contacts FROM carpool_members WHERE id_user=$id";
         $query1 = sqlsrv_query($this->connection, $sql1);
         $row = mssql_fetch_assoc($query1);
 
@@ -272,7 +272,7 @@ class FGMembersite
 
         foreach($contacts_array as $contact_id)
         {
-            $sql2 = "SELECT * FROM requests WHERE user_id=$contact_id";
+            $sql2 = "SELECT * FROM carpool_requests WHERE user_id=$contact_id";
             $query2 = sqlsrv_query($this->connection, $sql2);
             if(!$query2) return $result;
 
@@ -283,7 +283,7 @@ class FGMembersite
                 if($status == 0)
                 {
                     //get name that belongs to this user_id
-                    $sql3 = "SELECT * FROM members WHERE id_user=$contact_id";
+                    $sql3 = "SELECT * FROM carpool_members WHERE id_user=$contact_id";
                     $query3 = sqlsrv_query($this->connection, $sql3);
                     $rowOfUser = mssql_fetch_assoc($query3);
                     $contactName = $rowOfUser["name"];
@@ -305,7 +305,7 @@ class FGMembersite
         }  
 
         $id = $_SESSION['id_of_user'];
-        $sql1 = "SELECT * FROM members WHERE id_user=$id";
+        $sql1 = "SELECT * FROM carpool_members WHERE id_user=$id";
         $query1 = sqlsrv_query($this->connection, $sql1);
         $row = mssql_fetch_assoc($query1);
         
@@ -314,12 +314,12 @@ class FGMembersite
 
         $requests_array = explode(",", $row['todo']);
         foreach($requests_array as $request_id) {
-            $sql2 = "SELECT * FROM requests WHERE item_id=$request_id";
+            $sql2 = "SELECT * FROM carpool_requests WHERE item_id=$request_id";
             $query2 = sqlsrv_query($this->connection, $sql2);
             $rowOfRequest = mssql_fetch_assoc($query2);
 
             $contact_id = $rowOfRequest["user_id"];
-            $sql3 = "SELECT name FROM members WHERE id_user=$contact_id";
+            $sql3 = "SELECT name FROM carpool_members WHERE id_user=$contact_id";
             $query3 = sqlsrv_query($this->connection, $sql3);
             $rowOfContact = mssql_fetch_assoc($query3);
 
@@ -338,7 +338,7 @@ class FGMembersite
         } 
 
         $id = $_SESSION['id_of_user'];
-        $sql1 = "SELECT todo FROM members WHERE id_user=$id";
+        $sql1 = "SELECT todo FROM carpool_members WHERE id_user=$id";
         $query1 = sqlsrv_query($this->connection, $sql1);
         $row = mssql_fetch_assoc($query1);
 
@@ -366,7 +366,7 @@ class FGMembersite
         {
             $id = $_SESSION['id_of_user'];
 
-            $sql1 = "SELECT todo FROM members WHERE id_user=$id";
+            $sql1 = "SELECT todo FROM carpool_members WHERE id_user=$id";
             $query1 = sqlsrv_query($this->connection, $sql1);
             $row = mssql_fetch_assoc($query1);
 
@@ -374,10 +374,10 @@ class FGMembersite
             $new_array = array_diff($requests_array, array($request_id));
             $new_array_as_string = implode(",", $new_array);
 
-            $sql2 = "UPDATE members SET todo='".$new_array_as_string."' WHERE id_user='".$id."'";
+            $sql2 = "UPDATE carpool_members SET todo='".$new_array_as_string."' WHERE id_user='".$id."'";
             sqlsrv_query($this->connection, $sql2);
 
-            $sql3 = "UPDATE requests SET accepted='0' WHERE item_id='".$request_id."'";
+            $sql3 = "UPDATE carpool_requests SET accepted='0' WHERE item_id='".$request_id."'";
             sqlsrv_query($this->connection, $sql3);
 
             return true;
@@ -396,7 +396,7 @@ class FGMembersite
 
         //check if somebody alreay accepted this request or request has been cancelled
         $request_id = $_POST['request_id'];
-        $sql = "SELECT * FROM requests WHERE item_id=$request_id";
+        $sql = "SELECT * FROM carpool_requests WHERE item_id=$request_id";
         $query = sqlsrv_query($this->connection, $sql);
         if(!$query) return false;
 
@@ -404,11 +404,11 @@ class FGMembersite
         if(!$row) return false;
 
         if($row['accepted'] == 1) {
-            $this->HandleError("Verzoek al geaccepteerd!");
+            $this->HandleError("Verzoek is al geaccepteerd!");
             return false;
         }
         else {
-            $sql3 = "UPDATE requests SET accepted='1' WHERE item_id='".$request_id."'";
+            $sql3 = "UPDATE carpool_requests SET accepted='1' WHERE item_id='".$request_id."'";
             sqlsrv_query($this->connection, $sql3);
         }
 
@@ -418,7 +418,7 @@ class FGMembersite
         {
             $id = $_SESSION['id_of_user'];
 
-            $sql1 = "SELECT todo FROM members WHERE id_user=$id";
+            $sql1 = "SELECT todo FROM carpool_members WHERE id_user=$id";
             $query1 = sqlsrv_query($this->connection, $sql1);
             $row1 = mssql_fetch_assoc($query1);
 
@@ -429,7 +429,7 @@ class FGMembersite
                 $new_array_as_string = implode(",", $requests_array);
             }
 
-            $sql2 = "UPDATE members SET todo='".$new_array_as_string."' WHERE id_user='".$id."'";
+            $sql2 = "UPDATE carpool_members SET todo='".$new_array_as_string."' WHERE id_user='".$id."'";
             sqlsrv_query($this->connection, $sql2);
 
             return true;
@@ -452,13 +452,13 @@ class FGMembersite
 
         $request_id = $_POST['request_id'];
 
-        $sql1 = "INSERT INTO completed SELECT * FROM requests WHERE item_id = $request_id";
+        $sql1 = "INSERT INTO carpool_completed SELECT * FROM carpool_requests WHERE item_id = $request_id";
         sqlsrv_query($this->connection, $sql1);
 
-        $sql2 = "DELETE FROM requests WHERE item_id = $request_id";
+        $sql2 = "DELETE FROM carpool_requests WHERE item_id = $request_id";
         sqlsrv_query($this->connection, $sql2);
 
-        $sql3 = "UPDATE completed SET accepted='2' WHERE item_id = $request_id";
+        $sql3 = "UPDATE carpool_completed SET accepted='2' WHERE item_id = $request_id";
         sqlsrv_query($this->connection, $sql3);
 
         return true;
@@ -478,7 +478,7 @@ class FGMembersite
         }  
 
         $id = $_SESSION['id_of_user'];
-        $sql1 = "SELECT contacts FROM members WHERE id_user=$id";
+        $sql1 = "SELECT contacts FROM carpool_members WHERE id_user=$id";
         $query1 = sqlsrv_query($this->connection, $sql1);
         $row = mssql_fetch_assoc($query1);
 
@@ -487,7 +487,7 @@ class FGMembersite
 
         $contacts_array = explode(",", $row['contacts']);
         foreach($contacts_array as $contact_id) {
-            $sql2 = "SELECT name FROM members WHERE id_user=$contact_id";
+            $sql2 = "SELECT name FROM carpool_members WHERE id_user=$contact_id";
             $query2 = sqlsrv_query($this->connection, $sql2);
             $rowOfContact = mssql_fetch_assoc($query2);
 
@@ -506,7 +506,7 @@ class FGMembersite
         }  
 
         $contact_name = $_POST['contact_name'];
-        $sql1 = "SELECT * FROM members WHERE name='$contact_name'";
+        $sql1 = "SELECT * FROM carpool_members WHERE name='$contact_name'";
         $query1 = sqlsrv_query($this->connection, $sql1);
         $row = mssql_fetch_assoc($query1);
         
@@ -532,7 +532,7 @@ class FGMembersite
         } 
 
         $id = $_SESSION['id_of_user'];
-        $sql1 = "SELECT contacts FROM members WHERE id_user=$id";
+        $sql1 = "SELECT contacts FROM carpool_members WHERE id_user=$id";
         $query1 = sqlsrv_query($this->connection, $sql1);
         $row = mssql_fetch_assoc($query1);
 
@@ -553,7 +553,7 @@ class FGMembersite
             return false;
         } 
 
-        $sql1 = "SELECT name FROM members WHERE id_user=$contact_id";
+        $sql1 = "SELECT name FROM carpool_members WHERE id_user=$contact_id";
         $query1 = sqlsrv_query($this->connection, $sql1);
         $row = mssql_fetch_assoc($query1);
 
@@ -576,7 +576,7 @@ class FGMembersite
             $id = $_SESSION['id_of_user'];
             $contact_name = $_POST['contact_name'];
 
-            $sql1 = "SELECT contacts FROM members WHERE id_user=$id";
+            $sql1 = "SELECT contacts FROM carpool_members WHERE id_user=$id";
             $query1 = sqlsrv_query($this->connection, $sql1);
             $row = mssql_fetch_assoc($query1);
 
@@ -584,7 +584,7 @@ class FGMembersite
             $new_array = array_diff($contacts_array, array($contact_id));
             $new_array_as_string = implode(",", $new_array);
 
-            $sql2 = "UPDATE members SET contacts='".$new_array_as_string."' WHERE id_user='".$id."'";
+            $sql2 = "UPDATE carpool_members SET contacts='".$new_array_as_string."' WHERE id_user='".$id."'";
             sqlsrv_query($this->connection, $sql2);
 
             return true;
@@ -610,7 +610,7 @@ class FGMembersite
             $contact_id = $_POST['contact_id'];
             $contact_name = $_POST['contact_name'];
 
-            $sql1 = "SELECT contacts FROM members WHERE id_user=$id";
+            $sql1 = "SELECT contacts FROM carpool_members WHERE id_user=$id";
             $query1 = sqlsrv_query($this->connection, $sql1);
             $row = mssql_fetch_assoc($query1);
 
@@ -621,7 +621,7 @@ class FGMembersite
                 $new_array_as_string = implode(",", $contacts_array);
             }
 
-            $sql2 = "UPDATE members SET contacts='".$new_array_as_string."' WHERE id_user='".$id."'";
+            $sql2 = "UPDATE carpool_members SET contacts='".$new_array_as_string."' WHERE id_user='".$id."'";
             sqlsrv_query($this->connection, $sql2);
 
             return true;
@@ -639,7 +639,7 @@ class FGMembersite
         }  
 
         $id = $_SESSION['id_of_user'];
-        $sql1 = "SELECT * FROM members WHERE id_user=$id";
+        $sql1 = "SELECT * FROM carpool_members WHERE id_user=$id";
         $query1 = sqlsrv_query($this->connection, $sql1);
         $row = mssql_fetch_assoc($query1);
         
@@ -648,7 +648,7 @@ class FGMembersite
 
         $requests_array = explode(",", $row['history']);
         foreach($requests_array as $request_id) {
-            $sql2 = "SELECT * FROM completed WHERE item_id=$request_id";
+            $sql2 = "SELECT * FROM carpool_completed WHERE item_id=$request_id";
             $query2 = sqlsrv_query($this->connection, $sql2);
             $rowOfRequest = mssql_fetch_assoc($query2);
 
@@ -657,7 +657,7 @@ class FGMembersite
 
             if($contact_id != $id)
             {
-                $sql3 = "SELECT name FROM members WHERE id_user=$contact_id";
+                $sql3 = "SELECT name FROM carpool_members WHERE id_user=$contact_id";
                 $query3 = sqlsrv_query($this->connection, $sql3);
                 $rowOfContact = mssql_fetch_assoc($query3);
                 $name = $rowOfContact["name"];
@@ -678,7 +678,7 @@ class FGMembersite
         }
 
         $id = $_SESSION['id_of_user'];
-        $sql = "SELECT * FROM members WHERE id_user=$id";
+        $sql = "SELECT * FROM carpool_members WHERE id_user=$id";
         $query = sqlsrv_query($this->connection, $sql);
         $row = mssql_fetch_assoc($query);
 
@@ -696,7 +696,7 @@ class FGMembersite
             return false;
         }  
 
-        $sql = "SELECT * FROM news_items ORDER BY published DESC";
+        $sql = "SELECT * FROM carpool_news_items ORDER BY published DESC";
         $query = sqlsrv_query($this->connection, $sql);
 
         return $query;
@@ -761,7 +761,7 @@ class FGMembersite
         }
         if(empty($_GET['code']))
         {
-            $this->HandleError("Reset code ontbreekt!");
+            $this->HandleError("reset code ontbreekt!");
             return false;
         }
         $email = trim($_GET['email']);
@@ -769,7 +769,7 @@ class FGMembersite
         
         if($this->GetResetPasswordCode($email) != $code)
         {
-            $this->HandleError("Verkeerde reset code!");
+            $this->HandleError("Foutieve reset code!");
             return false;
         }
         
@@ -782,13 +782,13 @@ class FGMembersite
         $new_password = $this->ResetUserPasswordInDB($user_rec);
         if(false === $new_password || empty($new_password))
         {
-            $this->HandleError("Updaten nieuwe wachtwoord mislukt");
+            $this->HandleError("Error updaten nieuwe wachtwoord");
             return false;
         }
         
         if(false == $this->SendNewPassword($user_rec,$new_password))
         {
-            $this->HandleError("Zenden nieuw wachtwoord mislukt");
+            $this->HandleError("Error zenden nieuw wachtwoord");
             return false;
         }
         return true;
@@ -809,7 +809,7 @@ class FGMembersite
         }
         if(empty($_POST['newpwd']))
         {
-            $this->HandleError("Nieuw wachtwoord ontbreekt!");
+            $this->HandleError("Nieuwe wachtwoord ontbreekt!");
             return false;
         }
         
@@ -823,7 +823,7 @@ class FGMembersite
         
         if(!password_verify($pwd, $user_rec['password']))
         {
-            $this->HandleError("Het oude wachtwoord komt niet overeen!!");
+            $this->HandleError("Het oude wachtwoord komt niet overeen!");
             return false;
         }
         $newpwd = trim($_POST['newpwd']);
@@ -957,7 +957,7 @@ class FGMembersite
         $result = sqlsrv_query($this->connection, "Select name, email from $this->tablename where confirmcode='$confirmcode'");   
         if(!$result || mssql_num_rows($result) <= 0)
         {
-            $this->HandleError("Wrong confirm code.");
+            $this->HandleError("Foutieve bevestigings code.");
             return false;
         }
         $row = mssql_fetch_assoc($result);
@@ -968,7 +968,7 @@ class FGMembersite
         
         if(!sqlsrv_query($this->connection, $qry ))
         {
-            $this->HandleDBError("Error inserting data to the table\nquery:$qry");
+            $this->HandleDBError("Error toevoegen aan database \nquery:$qry");
             return false;
         }      
         return true;
@@ -994,7 +994,7 @@ class FGMembersite
         
         if(!sqlsrv_query($this->connection, $qry))
         {
-            $this->HandleDBError("Update wachtwoord mislukt \nquery:$qry");
+            $this->HandleDBError("Error updaten van wachtwoord \nquery:$qry");
             return false;
         }     
         return true;
@@ -1004,7 +1004,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }   
         $email = $this->SanitizeForSQL($email);
@@ -1013,7 +1013,7 @@ class FGMembersite
 
         if(!$result || mssql_num_rows($result) <= 0)
         {
-            $this->HandleError("Er is geen gebruiker geregistreerd met deze email: $email");
+            $this->HandleError("Er is geen gebruiker met deze email: $email");
             return false;
         }
         $user_rec = mssql_fetch_assoc($result);
@@ -1051,7 +1051,7 @@ class FGMembersite
 
         if(!$mailer->Send())
         {
-            $this->HandleError("Zenden welkomst email mislukt.");
+            $this->HandleError("Failed sending user welcome email.");
             return false;
         }
         return true;
@@ -1341,7 +1341,7 @@ class FGMembersite
 
         if(!$this->connection)
         {   
-            $this->HandleDBError("Database Login failed! Please make sure that the DB login credentials provided are correct");
+            $this->HandleDBError("Database login mislukt! Please make sure that the DB login credentials provided are correct");
             return false;
         }
 

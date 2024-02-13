@@ -49,7 +49,8 @@ if(isset($_POST['subscribe']))
         ); 
         $prevRow = $subscriber->getRows($con); 
 
-        if($prevRow > 0){ 
+        if($prevRow > 0)
+        { 
             $response = 'Your email already exists in our subscribers list.'; 
         }
         else
@@ -64,7 +65,18 @@ if(isset($_POST['subscribe']))
                 'participate' => $participate
             ); 
 
+            echo implode(" ", $data)."<br />";
+
             $insert = $subscriber->insert($data); 
+
+            if( ($errors = sqlsrv_errors() ) != null) {
+                foreach( $errors as $error ) {
+                    echo "SQLSTATE: ".$error[ 'SQLSTATE']."<br />";
+                    echo "code: ".$error[ 'code']."<br />";
+                    echo "message: ".$error[ 'message']."<br />";
+                }
+            }
+
             if($insert)
             {
                 $mailer = new PHPMailer(true);
@@ -78,7 +90,7 @@ if(isset($_POST['subscribe']))
                 $mailer->Password = "piqpxlbopjpolnds";
                 
                 $mailer->AddAddress($email, $name);
-                $mailer->Subject = "Bevestigen aanmelden nieuwsbrief Versoek.nl";
+                $mailer->Subject = "Bevestigen aanmelden nieuwsbrief Carpool.Versoek.nl";
                 // $mailer->From = "info@versoek.nl";
                 $mailer->Sender='info@yversoek.nl';
                 $mailer->SetFrom('info@yversoek.nl', 'Versoek.nl');
@@ -100,6 +112,10 @@ if(isset($_POST['subscribe']))
                     $response = "Error in sending email";
                 }
             } 
+            else
+            {
+                $response = "no insert";
+            }
         } 
     }
     else
@@ -178,7 +194,7 @@ else if(isset($_POST['send_email']))
             $mailer2->Password = "piqpxlbopjpolnds";
             
             $mailer2->AddAddress("info@versoek.nl", "Team Versoek");
-            $mailer2->Subject = "Bericht via contactformulier Versoek.nl";
+            $mailer2->Subject = "Bericht via contactformulier Carpool.versoek.nl";
             $mailer2->From = $mail;
 
             $mailer2->Body ="Bericht van ".$fname." ".$lname.",\r\n\r\n".
@@ -257,7 +273,7 @@ else if(!empty($_GET['email_verify']))
                     <div class="sloc-text">
                         <div class="sloc-header"><?php echo $statusMsg; ?></div>
                     </div>
-                    <a href="https://www.versoek.nl" class="cwlink">Klik hier om terug te gaan naar de Versoek pagina</a>
+                    <a href="https://carpool.versoek.nl" class="cwlink">Klik hier om terug te gaan naar de Versoek pagina</a>
                 </div>
             </div>
         </div>

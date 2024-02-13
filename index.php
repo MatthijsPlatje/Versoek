@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!--<meta name="viewport" content="width=1080px, initial-scale=1" />-->
 
-    <title>Versoek Crowd Delivery</title>
+    <title>SM!LES Crowd Delivery</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <style type="text/css"> .fa_custom { color: white } </style>
@@ -38,7 +38,7 @@
         <div class="launch_info">
             <div class="flex-container">
                 <div class="flex-child left">
-                    <p class="eind2024">Het platform is in volle ontwikkeling</p>
+                    <p class="eind2024">Het carpool platform is in volle ontwikkeling</p>
                     <p>Ben jij benieuwd wat het inhoud en wil jij op de hoogte gehouden worden van de ontwikkelingen? Lees meer en meld je aan voor de nieuwsbrief!</p>
                     <div class="flex-container-2">
                         <div class="flex-child-2 left">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <div class="flex-child right" style="font-size: 40px">
+                <div class="flex-child right">
                     <a href="https://logwork.com/countdown-wqwg" class="countdown-timer" data-timezone="Europe/Amsterdam" data-textcolor="#000000" data-date="2024-01-01 12:00" data-background="#ffffff" data-digitscolor="#000000" data-unitscolor="#ffffff">Tijd tot launch</a>
                 </div>
             </div>
@@ -62,16 +62,16 @@
 
         <div class="flex-container-3">
             <div class="flex-child-3 left">
-                <img src="../images/bezorger3.jpg" width="100%" alt="Bezorger" style="opacity: 0.5">
-                <h2>Bezorger</h2>
-                <p>Wil jij pakketjes gaan ophalen en bezorgen op jouw route? Lees dan meer over de voordelen hiervan</p>
+                <img src="../images/car_driver.jpg" width="100%" alt="Bestuurder" style="opacity: 0.5">
+                <h2>Bestuurder</h2>
+                <p>Rijd jij van A naar B en heb je nog lege stoelen in je auto? Neem iemand mee!</p>
                 <button onclick="window.location.href='by_you.html';" class="button_lees_meer">Klik hier</button>
             </div>
 
             <div class="flex-child-3 right">
-                <img src="../images/consument4.jpg" width="100%" alt="Consument" style="opacity: 0.5">
-                <h2>Consument</h2>
-                <p>Wil jij pakketjes bestellen op een verantwoordelijke wijze? Lees dan meer over de positieve gevolgen hiervan</p>
+                <img src="../images/passenger.jpg" width="100%" alt="Passagier" style="opacity: 0.5">
+                <h2>Passagier</h2>
+                <p>Wil jij van A naar B en je wil graag met iemand mee rijden? Versoek een carpool!</p>
                 <button onclick="window.location.href='for_you.html';" class="button_lees_meer">Klik hier</button>
             </div>
         </div>

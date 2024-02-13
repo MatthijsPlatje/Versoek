@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="join_community">
-                            <input type="button" class="button_meld_aan" id="subscribeBtn" value="Aanmelden" style="margin-top: 16px;">
+                            <input type="button" class="button_meld_aan" id="subscribeBtn" value="Aanmelden!" style="margin-top: 16px;">
                         </div>
 
                         <div class="join_community">
@@ -83,7 +83,7 @@
                         alert('Please enter your name.');
                         $('#name').focus();
                         return false;
-                    }else if (name.length < 4 && !name.includes(" ")) {
+                    }else if (name.length < 4 && !name.includes(" ")){
                         alert('Please enter a valid name (first & last name).');
                         $('#name').focus();
                         return false;
@@ -98,7 +98,7 @@
                     }
                     else
                     {
-                        var jqxhr = $.post("email_subscription/subscription.php", {subscribe:1,name:name,email:email,participate:participate}, function(data) {
+                        var jqxhr = $.post("email_subscription/subscription.php", {subscribe:1, name:name, email:email, participate:participate}, function(data) {
                             if(data.endsWith("ok"))
                             {
                                 $('#subsFrm')[0].reset();
@@ -106,7 +106,7 @@
                             }
                             else
                             {
-                                $('.status').html('<p class="error">Er is iets mis gegaan! (ben je al aangemeld? of onjuiste email?)</p>');
+                                $('.status').html('<p class="error">Er is iets mis gegaan! (ben je al aangemeld? of onjuiste email?)</p>' + data);
                             }
                             $('#subscribeBtn').removeAttr("disabled");
                             $('.content-frm').css('opacity', '');
