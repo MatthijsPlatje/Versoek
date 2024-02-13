@@ -54,7 +54,8 @@
                 <a class="welcome_name" href="platform/start.php"> <?php echo ($isLoggedIn ? "Hallo ".($fgmembersite->UserFullName()) : "") ?></a>
                         
                 <div class="nav_container">
-                    <div class="nav">                        
+                    <div class="nav">
+                        <a href="platform/questionnaire.php" style="color: rgb(252, 244, 164);">VRAGENLIJST 1</a>
                         <a href="platform/contact.php">CONTACT</a>
                         <?php echo (($isAdmin && $isLoggedIn) ? "<a class='voor_jou' href='admin.php'>ADMIN</a>" : "") ?>
                         <a class="contact" href=<?php echo $link ?>><?php echo $label ?></a>
