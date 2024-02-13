@@ -1074,12 +1074,12 @@ class FGMembersite
         $mailer = new PHPMailer(true);
         $mailer->SMTPDebug = SMTP::DEBUG_SERVER;
         $mailer->IsSMTP();
-        $mailer->Host = "smtp.gmail.com";
-        $mailer->Port = 465;
+        $mailer->Host = "smtp.example.com";
+        $mailer->Port = 666;
         $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mailer->SMTPAuth = true;
-        $mailer->Username = "mplatje@gmail.com";
-        $mailer->Password = "piqpxlbopjpolnds";
+        $mailer->Username = "user@example.com";
+        $mailer->Password = "password";
 
         //create actual email:
         $mailer->setFrom('admin@versoek.nl', 'Versoek');
@@ -1114,12 +1114,12 @@ class FGMembersite
         $mailer = new PHPMailer(true);
         $mailer->SMTPDebug = SMTP::DEBUG_SERVER;
         $mailer->IsSMTP();
-        $mailer->Host = "smtp.gmail.com";
-        $mailer->Port = 465;
+        $mailer->Host = "smtp.example.com";
+        $mailer->Port = 666;
         $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mailer->SMTPAuth = true;
-        $mailer->Username = "mplatje@gmail.com";
-        $mailer->Password = "piqpxlbopjpolnds";
+        $mailer->Username = "user@example.com";
+        $mailer->Password = "password";
 
         //create actual email:
         $mailer->setFrom('admin@versoek.nl', 'Versoek');
@@ -1150,12 +1150,12 @@ class FGMembersite
         $mailer = new PHPMailer(true);
         $mailer->SMTPDebug = SMTP::DEBUG_SERVER;
         $mailer->IsSMTP();
-        $mailer->Host = "smtp.gmail.com";
-        $mailer->Port = 465;
+        $mailer->Host = "smtp.example.com";
+        $mailer->Port = 666;
         $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mailer->SMTPAuth = true;
-        $mailer->Username = "mplatje@gmail.com";
-        $mailer->Password = "piqpxlbopjpolnds";
+        $mailer->Username = "user@example.com";
+        $mailer->Password = "password";
         
         $mailer->AddAddress($email,$user_rec['name']);
         $mailer->Subject = "Wachtwoord reset voor ".$this->sitename;
@@ -1187,12 +1187,12 @@ class FGMembersite
         $mailer = new PHPMailer(true);
         $mailer->SMTPDebug = SMTP::DEBUG_SERVER;
         $mailer->IsSMTP();
-        $mailer->Host = "smtp.gmail.com";
-        $mailer->Port = 465;
+        $mailer->Host = "smtp.example.com";
+        $mailer->Port = 666;
         $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mailer->SMTPAuth = true;
-        $mailer->Username = "mplatje@gmail.com";
-        $mailer->Password = "piqpxlbopjpolnds";
+        $mailer->Username = "user@example.com";
+        $mailer->Password = "password";
         
         $mailer->AddAddress($email,$user_rec['name']);
         $mailer->Subject = "Jouw nieuwe wachtwoord voor ".$this->sitename;
@@ -1262,14 +1262,14 @@ class FGMembersite
         $mailer = new PHPMailer(true);
         $mailer->SMTPDebug = SMTP::DEBUG_SERVER;
         $mailer->IsSMTP();
-        $mailer->Host = "smtp.gmail.com";
-        $mailer->Port = 465;
+        $mailer->Host = "smtp.example.com";
+        $mailer->Port = 666;
         $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mailer->SMTPAuth = true;
-        $mailer->Username = "mplatje@gmail.com";
-        $mailer->Password = "piqpxlbopjpolnds";
+        $mailer->Username = "user@example.com";
+        $mailer->Password = "password";
         //create actual email:
-        $mailer->setFrom('mplatje@gmail.com', 'Matthijs');
+        $mailer->setFrom('user@example.com', 'Matthijs');
         $mailer->AddAddress($formvars['email'],$formvars['name']);
         $mailer->isHTML(true);
         $mailer->Subject = "Jouw registratie bij ".$this->sitename; 
