@@ -11,7 +11,7 @@ $siteURL = 'https://';
 $siteURL = $siteURL.$_SERVER["SERVER_NAME"].dirname($_SERVER['REQUEST_URI']).'/';
 
 define('DB_HOST', 'sql.versoek.nl');
-define('DB_USERNAME', 'versoeknl');
-define('DB_PASSWORD', '%qM1!qL)UQ');
-define('DB_NAME', 'versoeknl');
+define('DB_USERNAME', 'username');
+define('DB_PASSWORD', 'password');
+define('DB_NAME', 'versoek');
 
