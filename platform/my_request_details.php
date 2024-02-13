@@ -40,7 +40,7 @@
 
         <div class="container">
             <div class="launch_info">
-                <h2 style="color: #7448b1; font-size: 40px; text-align: center; margin-top: 0px; margin-bottom: 0px;">Verzoek details</h2><hr>
+                <h2 style="color: #7448b1; font-size: 40px; text-align: center; margin-top: 0px; margin-bottom: 0px;">Carpool verzoek details</h2><hr>
 
                 <button style="margin-left: 20px;" onclick="window.location.href='platform/my_requests.php';" class="button_back">Terug</button>
 
@@ -57,12 +57,12 @@
                                 <td style="border: 1px solid black; border-radius: 10px;"><h2 style="text-align: right; margin: 8px;" id="item_description"></h2></td>
                             </tr>
                             <tr>
-                                <td style="background-color: rgb(61, 204, 209); border: 1px solid black; border-radius: 10px;"><h2 style="margin: 8px;">Locatie:</h2></td>
-                                <td style="border: 1px solid black; border-radius: 10px;"><h2 style="text-align: right; margin: 8px;" id="item_location"></h2></td>
+                                <td style="background-color: rgb(61, 204, 209); border: 1px solid black; border-radius: 10px;"><h2 style="margin: 8px;">Start locatie:</h2></td>
+                                <td style="border: 1px solid black; border-radius: 10px;"><h2 style="text-align: right; margin: 8px;" id="location_from"></h2></td>
                             </tr>
                             <tr>
-                                <td style="background-color: rgb(61, 204, 209); border: 1px solid black; border-radius: 10px;"><h2 style="margin: 8px;">Prijs:</h2></td>
-                                <td style="border: 1px solid black; border-radius: 10px;"><h2 style="text-align: right; margin: 8px;" id="item_price"></h2></td>
+                                <td style="background-color: rgb(61, 204, 209); border: 1px solid black; border-radius: 10px;"><h2 style="margin: 8px;">Bestemming:</h2></td>
+                                <td style="border: 1px solid black; border-radius: 10px;"><h2 style="text-align: right; margin: 8px;" id="location_to"></h2></td>
                             </tr>
                             <tr>
                                 <td style="background-color: rgb(61, 204, 209); border: 1px solid black; border-radius: 10px;"><h2 style="margin: 8px;">Wanneer:</h2></td>
@@ -86,11 +86,11 @@
                             var item_description = url.searchParams.get("item_description");
                             if(item_description) document.getElementById("item_description").innerHTML = item_description;
 
-                            var item_location = url.searchParams.get("item_location");
-                            if(item_location) document.getElementById("item_location").innerHTML = item_location;
+                            var location_from = url.searchParams.get("item_location");
+                            if(location_from) document.getElementById("location_from").innerHTML = location_from;
 
-                            var item_price = url.searchParams.get("item_price");
-                            if(item_price) document.getElementById("item_price").innerHTML = item_price;
+                            var location_to = url.searchParams.get("item_destination");
+                            if(location_to) document.getElementById("location_to").innerHTML = location_to;
 
                             var item_date = url.searchParams.get("item_date");
                             if(item_date) document.getElementById("item_date").innerHTML = item_date;

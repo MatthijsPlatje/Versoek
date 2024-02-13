@@ -67,23 +67,13 @@
                         <label for="request_description">Beschrijving</label>
                         <input type="text" id="request_description" name="request_description" placeholder="Beschrijving van jouw verzoek...">
                     
-                        <div class="checkbox_ok_to_contact" style="margin-top: 24px; margin-bottom: 24px; text-align: left;">
-                            <label for="checkbox_location">Ik wil locatie(s) aangeven</label>
-                            <input type="checkbox" name="checkbox_location" id="checkbox_location" style="float:left"/>
-                        </div>
-
                         <div id="location_fields">
-                            <label for="location">Huidige Locatie</label>
-                            <input type="text" id="location" name="location" placeholder="Voor welke locatie is dit verzoek...">
+                            <label for="location">Start locatie</label>
+                            <input type="text" id="location" name="location" placeholder="Vanaf waar...">
 
-                            <label for="destination">Waar het heen moet</label>
-                            <input type="text" id="destination" name="destination" placeholder="De locatie waar het heen moet...">
+                            <label for="destination">Eindbestemming</label>
+                            <input type="text" id="destination" name="destination" placeholder="Eindbestemming...">
                         </div>
-
-                        <!--
-                        <label for="price">Prijs</label>
-                        <input type="text" id="price" name="price" placeholder="Wat is de verwachte prijs (optioneel)...">
-                        -->
 
                         <div class="checkbox_ok_to_contact" style="margin-top: 32px; margin-bottom: 24px; text-align: left;">
                             <label for="checkbox_date">Ik wil een tijdstip opgeven</label>
@@ -97,7 +87,7 @@
                     
                         <div style="text-align: right;"><input style="margin-right: 20px;" type="submit" class="button_add" value="Voeg nieuw verzoek toe"></div>
 
-                        <br><p style="color: #7448b1; font-size: 12px; margin-left: 10%; margin-right: 10%; text-align: center;">*De gegevens die je hier invult, kan door jouw contactpersonen worden gezien. Wees daarom voorzichtig met het verstrekken van prive data die je liever niet deelt (zoals adressen, telefoonnummers of de waarde van een pakket).</p><br>
+                        <br><p style="color: #7448b1; font-size: 12px; margin-left: 10%; margin-right: 10%; text-align: center;">*De gegevens die je hier invult, kan door jouw contactpersonen worden gezien. Wees daarom voorzichtig met het verstrekken van prive data die je liever niet deelt.</p><br>
                     </form>
                 </div>
             </div>
@@ -108,19 +98,6 @@
         </div>
 
         <script>
-            const locationCheckbox = document.querySelector('#checkbox_location');
-            const locationFields = document.getElementById('location_fields');
-            locationFields.style.display = 'none';
-
-            locationCheckbox.addEventListener('change', () => {
-                if (locationCheckbox.checked) {
-                    locationFields.style.display = '';
-                    locationFields.value = '';
-                } else {
-                    locationFields.style.display = 'none';
-                }
-            });
-
             const dateCheckbox = document.querySelector('#checkbox_date');
             const dateField = document.getElementById('date_and_time_field');
             dateField.style.display = 'none';

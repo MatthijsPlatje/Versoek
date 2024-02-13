@@ -53,7 +53,7 @@
 
                         <tr>
                             <td>
-                                <button onclick="window.location.href='platform/my_request_details.php?item_name=<?php echo $row['item_name'];?>&item_description=<?php echo $row['item_description'];?>&item_location=<?php echo $row['item_location'];?>&item_status=<?php echo $row['accepted'];?>';" class="button_request"><?php echo $row['item_name'];?></button>
+                                <button onclick="window.location.href='platform/my_request_details.php?item_name=<?php echo $row['item_name'];?>&item_description=<?php echo $row['item_description'];?>&item_location=<?php echo $row['item_location'];?>&item_destination=<?php echo $row['item_destination'];?>&item_status=<?php echo $row['accepted'];?>';" class="button_request"><?php echo $row['item_name'];?></button>
                             </td>
                             <td style="width: 10%">
                                 <?php echo ($row['accepted'] == 0 ? "" : "<img src='../images/check.png' alt='check'>");?>

@@ -21,3 +21,13 @@ website:
 - nieuwsberichten pagina met dynamisch laden?
 
 admin - I<3MakingWebsites!
+
+
+
+
+
+2023 September 13
+Carpool:
+- Zoeken op email adres ipv nickname
+- Zoeken op locatie?
+- 
