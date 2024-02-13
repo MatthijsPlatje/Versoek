@@ -82,12 +82,12 @@ if(isset($_POST['subscribe']))
                 $mailer = new PHPMailer(true);
                 $mailer->SMTPDebug = SMTP::DEBUG_SERVER;
                 $mailer->IsSMTP();
-                $mailer->Host = "smtp.gmail.com";
-                $mailer->Port = 465;
+                $mailer->Host = "smtp.example.com";
+                $mailer->Port = 666;
                 $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                 $mailer->SMTPAuth = true;
-                $mailer->Username = "mplatje@gmail.com";
-                $mailer->Password = "piqpxlbopjpolnds";
+                $mailer->Username = "user@example.com";
+                $mailer->Password = "password";
                 
                 $mailer->AddAddress($email, $name);
                 $mailer->Subject = "Bevestigen aanmelden nieuwsbrief Carpool.Versoek.nl";
@@ -164,12 +164,12 @@ else if(isset($_POST['send_email']))
         $mailer = new PHPMailer(true);
         $mailer->SMTPDebug = SMTP::DEBUG_SERVER;
         $mailer->IsSMTP();
-        $mailer->Host = "smtp.gmail.com";
-        $mailer->Port = 465;
+        $mailer->Host = "smtp.example.com";
+        $mailer->Port = 666;
         $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mailer->SMTPAuth = true;
-        $mailer->Username = "mplatje@gmail.com";
-        $mailer->Password = "piqpxlbopjpolnds";
+        $mailer->Username = "user@example.com";
+        $mailer->Password = "password";
         
         $mailer->AddAddress($email, $name);
         $mailer->Subject = "Bericht verstuurt naar Versoek.nl";
@@ -186,12 +186,12 @@ else if(isset($_POST['send_email']))
             $mailer2 = new PHPMailer(true);
             $mailer2->SMTPDebug = SMTP::DEBUG_SERVER;
             $mailer2->IsSMTP();
-            $mailer2->Host = "smtp.gmail.com";
-            $mailer2->Port = 465;
+            $mailer2->Host = "smtp.example.com";
+            $mailer2->Port = 666;
             $mailer2->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mailer2->SMTPAuth = true;
-            $mailer2->Username = "mplatje@gmail.com";
-            $mailer2->Password = "piqpxlbopjpolnds";
+            $mailer2->Username = "user@example.com";
+            $mailer2->Password = "password";
             
             $mailer2->AddAddress("info@versoek.nl", "Team Versoek");
             $mailer2->Subject = "Bericht via contactformulier Carpool.versoek.nl";
