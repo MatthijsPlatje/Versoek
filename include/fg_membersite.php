@@ -108,7 +108,7 @@ class FGMembersite
     {
         if(empty($_GET['code'])||strlen($_GET['code'])<=10)
         {
-            $this->HandleError("Please provide the confirm code");
+            $this->HandleError("Geef de bevestigingscode op");
             return false;
         }
 
@@ -129,13 +129,13 @@ class FGMembersite
     {
         if(empty($_POST['username']))
         {
-            $this->HandleError("UserName is empty!");
+            $this->HandleError("Gebruikersnaam ontbreekt!");
             return false;
         }
         
         if(empty($_POST['password']))
         {
-            $this->HandleError("Password is empty!");
+            $this->HandleError("Paswoord ontbreekt!");
             return false;
         }
         
@@ -170,7 +170,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -196,7 +196,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -217,7 +217,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -232,7 +232,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -258,7 +258,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -300,7 +300,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -333,7 +333,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         } 
 
@@ -355,7 +355,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -390,7 +390,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         } 
 
@@ -404,7 +404,7 @@ class FGMembersite
         if(!$row) return false;
 
         if($row['accepted'] == 1) {
-            $this->HandleError("Request already accepted!");
+            $this->HandleError("Verzoek al geaccepteerd!");
             return false;
         }
         else {
@@ -446,7 +446,7 @@ class FGMembersite
         //copy from requests to completed
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -473,7 +473,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -501,7 +501,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -527,7 +527,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         } 
 
@@ -549,7 +549,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         } 
 
@@ -564,7 +564,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -597,7 +597,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         } 
 
@@ -634,7 +634,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }  
 
@@ -673,7 +673,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }
 
@@ -691,7 +691,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
 
             return false;
         }  
@@ -737,7 +737,7 @@ class FGMembersite
     {
         if(empty($_POST['email']))
         {
-            $this->HandleError("Email is empty!");
+            $this->HandleError("Email ontbreekt!");
             return false;
         }
         $user_rec = array();
@@ -756,12 +756,12 @@ class FGMembersite
     {
         if(empty($_GET['email']))
         {
-            $this->HandleError("Email is empty!");
+            $this->HandleError("Email ontbreekt!");
             return false;
         }
         if(empty($_GET['code']))
         {
-            $this->HandleError("reset code is empty!");
+            $this->HandleError("Reset code ontbreekt!");
             return false;
         }
         $email = trim($_GET['email']);
@@ -769,7 +769,7 @@ class FGMembersite
         
         if($this->GetResetPasswordCode($email) != $code)
         {
-            $this->HandleError("Bad reset code!");
+            $this->HandleError("Verkeerde reset code!");
             return false;
         }
         
@@ -782,13 +782,13 @@ class FGMembersite
         $new_password = $this->ResetUserPasswordInDB($user_rec);
         if(false === $new_password || empty($new_password))
         {
-            $this->HandleError("Error updating new password");
+            $this->HandleError("Updaten nieuwe wachtwoord mislukt");
             return false;
         }
         
         if(false == $this->SendNewPassword($user_rec,$new_password))
         {
-            $this->HandleError("Error sending new password");
+            $this->HandleError("Zenden nieuw wachtwoord mislukt");
             return false;
         }
         return true;
@@ -798,18 +798,18 @@ class FGMembersite
     {
         if(!$this->CheckLogin())
         {
-            $this->HandleError("Not logged in!");
+            $this->HandleError("Niet ingelogd!");
             return false;
         }
         
         if(empty($_POST['oldpwd']))
         {
-            $this->HandleError("Old password is empty!");
+            $this->HandleError("Oude wachtwoord ontbreekt!");
             return false;
         }
         if(empty($_POST['newpwd']))
         {
-            $this->HandleError("New password is empty!");
+            $this->HandleError("Nieuw wachtwoord ontbreekt!");
             return false;
         }
         
@@ -823,7 +823,7 @@ class FGMembersite
         
         if(!password_verify($pwd, $user_rec['password']))
         {
-            $this->HandleError("The old password does not match!");
+            $this->HandleError("Het oude wachtwoord komt niet overeen!!");
             return false;
         }
         $newpwd = trim($_POST['newpwd']);
@@ -906,7 +906,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }          
         $username = $this->SanitizeForSQL($username);
@@ -920,20 +920,20 @@ class FGMembersite
         
         if($no_of_rows <= 0)
         {
-            $this->HandleError("Error logging in. The username or password does not match");
+            $this->HandleError("Login mislukt. Gebruikersnaam of wachtwoord klopt niet");
             return false;
         }
         
         $row = mssql_fetch_assoc($nresult);
         if($row['confirmcode']!= 'y')
         {
-            $this->HandleError("Error logging in. The username or password does not match");
+            $this->HandleError("Login mislukt. Gebruikersnaam of wachtwoord klopt niet");
             return false;            
         }
         
         if(!password_verify($password , $row['password'] ))
         {
-            $this->HandleError("Error logging in. The username or password does not match");
+            $this->HandleError("Login mislukt. Gebruikersnaam of wachtwoord klopt niet");
             return false;
         }
 
@@ -949,7 +949,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }   
         $confirmcode = $this->SanitizeForSQL($_GET['code']);
@@ -994,7 +994,7 @@ class FGMembersite
         
         if(!sqlsrv_query($this->connection, $qry))
         {
-            $this->HandleDBError("Error updating the password \nquery:$qry");
+            $this->HandleDBError("Update wachtwoord mislukt \nquery:$qry");
             return false;
         }     
         return true;
@@ -1013,7 +1013,7 @@ class FGMembersite
 
         if(!$result || mssql_num_rows($result) <= 0)
         {
-            $this->HandleError("There is no user with email: $email");
+            $this->HandleError("Er is geen gebruiker geregistreerd met deze email: $email");
             return false;
         }
         $user_rec = mssql_fetch_assoc($result);
@@ -1038,20 +1038,20 @@ class FGMembersite
         $mailer->setFrom('admin@versoek.nl', 'Versoek');
         $mailer->AddAddress($user_rec['email'],$user_rec['name']);
         $mailer->CharSet = 'utf-8';
-        $mailer->Subject = "Welcome to ".$this->sitename;
+        $mailer->Subject = "Welkom bij ".$this->sitename;
         //$mailer->From = $this->GetFromAddress();        
-        $mailer->Body ="Hello ".$user_rec['name']."\r\n".
+        $mailer->Body ="Hallo ".$user_rec['name']."\r\n".
         "\r\n".
-        "Your registration  with ".$this->sitename." is completed.\r\n".
+        "Jouw registratie met ".$this->sitename." is compleet.\r\n".
         "\r\n".
-        "Kind regards,\r\n".
+        "Met vriendelijke groet,\r\n".
         $this->sitename.
         "\r\n".
-        "To unsubscribe: link";
+        "Uitschrijven: link";
 
         if(!$mailer->Send())
         {
-            $this->HandleError("Failed sending user welcome email.");
+            $this->HandleError("Zenden welkomst email mislukt.");
             return false;
         }
         return true;
@@ -1075,14 +1075,14 @@ class FGMembersite
         $mailer->Password = "piqpxlbopjpolnds";
 
         //create actual email:
-        $mailer->setFrom('somebody@smilescrowd.nl', 'Somebody');
+        $mailer->setFrom('somebody@versoek.nl', 'Somebody');
         $mailer->AddAddress($this->admin_email);
-        $mailer->Subject = "Registration Completed: ".$user_rec['name'];
+        $mailer->Subject = "Registratie compleet: ".$user_rec['name'];
         //$mailer->From = $this->GetFromAddress();         
         
-        $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
-        "Name: ".$user_rec['name']."\r\n".
-        "Email address: ".$user_rec['email']."\r\n";
+        $mailer->Body ="Een nieuwe gebruiker is geregistreerd op ".$this->sitename."\r\n".
+        "Naam: ".$user_rec['name']."\r\n".
+        "Email adres: ".$user_rec['email']."\r\n";
         
         if(!$mailer->Send())
         {
@@ -1111,7 +1111,7 @@ class FGMembersite
         $mailer->Password = "piqpxlbopjpolnds";
         
         $mailer->AddAddress($email,$user_rec['name']);
-        $mailer->Subject = "Your reset password request at ".$this->sitename;
+        $mailer->Subject = "Jouw reset wachtwoord verzoek bij ".$this->sitename;
         $mailer->From = $this->GetFromAddress();
         
         $link = $this->GetAbsoluteURLFolder().
@@ -1119,10 +1119,10 @@ class FGMembersite
                 urlencode($email).'&code='.
                 urlencode($this->GetResetPasswordCode($email));
 
-        $mailer->Body ="Hello ".$user_rec['name']."\r\n\r\n".
-        "There was a request to reset your password at ".$this->sitename."\r\n".
-        "Please click the link below to complete the request: \r\n".$link."\r\n".
-        "Regards,\r\n".
+        $mailer->Body ="Hallo ".$user_rec['name']."\r\n\r\n".
+        "Er was een verzoek om jouw wachtwoord te resetten op ".$this->sitename."\r\n".
+        "Gebruik te volgende link om het verzoek te voltooien: \r\n".$link."\r\n".
+        "Met vriendelijke groet,\r\n".
         "Webmaster\r\n".
         $this->sitename;
         
@@ -1148,18 +1148,18 @@ class FGMembersite
         $mailer->Password = "piqpxlbopjpolnds";
         
         $mailer->AddAddress($email,$user_rec['name']);
-        $mailer->Subject = "Your new password for ".$this->sitename;
+        $mailer->Subject = "Jouw nieuwe wachtwoord voor ".$this->sitename;
         $mailer->From = $this->GetFromAddress();
         
-        $mailer->Body ="Hello ".$user_rec['name']."\r\n\r\n".
-        "Your password is reset successfully. ".
-        "Here is your updated login:\r\n".
-        "username:".$user_rec['username']."\r\n".
-        "password:$new_password\r\n".
+        $mailer->Body ="Hallo ".$user_rec['name']."\r\n\r\n".
+        "Jouw wachtwoord is succesvol gereset. ".
+        "Hier is jouw nieuwe login:\r\n".
+        "gebruikersnaam:".$user_rec['username']."\r\n".
+        "wachtwoord:$new_password\r\n".
         "\r\n".
-        "Login here: ".$this->GetAbsoluteURLFolder()."/login.php\r\n".
+        "Login: ".$this->GetAbsoluteURLFolder()."/login.php\r\n".
         "\r\n".
-        "Kind regards,\r\n".
+        "Met vriendelijke groet,\r\n".
         "Versoek.nl\r\n".
         $this->sitename;
         
@@ -1181,11 +1181,11 @@ class FGMembersite
         }
         
         $validator = new FormValidator();
-        $validator->addValidation("name","req","Please fill in Name");
-        $validator->addValidation("email","email","The input for Email should be a valid email value");
-        $validator->addValidation("email","req","Please fill in Email");
+        $validator->addValidation("name","req","Vul een naam in");
+        $validator->addValidation("email","email","Vul een geldig email adres in");
+        $validator->addValidation("email","req","Vul een email adres in");
   
-        $validator->addValidation("password","req","Please fill in Password");
+        $validator->addValidation("password","req","Geef een wachtwoord op");
 
         
         if(!$validator->ValidateForm())
@@ -1223,18 +1223,18 @@ class FGMembersite
         $mailer->Username = "mplatje@gmail.com";
         $mailer->Password = "piqpxlbopjpolnds";
         //create actual email:
-        $mailer->setFrom('mplatje@gmail.com', 'Matthijs');
+        $mailer->setFrom('info@versoek.nl', 'Versoek');
         $mailer->AddAddress($formvars['email'],$formvars['name']);
         $mailer->isHTML(true);
-        $mailer->Subject = "Your registration with ".$this->sitename; 
+        $mailer->Subject = "Jouw registratie bij ".$this->sitename; 
         $confirmcode = $formvars['confirmcode'];
         $confirm_url = $this->GetAbsoluteURLFolder().'/create_account_to_confirm.php?code='.$confirmcode;
-        $mailer->Body ="Hello ".$formvars['name']."\r\n\r\n".
-        "Thanks for your registration with ".$this->sitename."\r\n".
-        "Please click the link below to confirm your registration.\r\n".
+        $mailer->Body ="Hallo ".$formvars['name']."\r\n\r\n".
+        "Bedankt voor jouw registratie op ".$this->sitename."\r\n".
+        "Klik hier om jouw registratie te bevestigen:\r\n".
         "$confirm_url\r\n".
         "\r\n".
-        "Kind regards,\r\n".
+        "Met vriendelijke groet,\r\n".
         "Versoek.nl\r\n".
         $this->sitename;        
 
@@ -1273,12 +1273,12 @@ class FGMembersite
         $mailer->CharSet = 'utf-8';
         $mailer->AddAddress($this->admin_email);
         
-        $mailer->Subject = "New registration: ".$formvars['name'];
+        $mailer->Subject = "Nieuwe registratie: ".$formvars['name'];
         $mailer->From = $this->GetFromAddress();         
         
-        $mailer->Body ="A new user registered at ".$this->sitename."\r\n".
-        "Name: ".$formvars['name']."\r\n".
-        "Email address: ".$formvars['email']."\r\n".
+        $mailer->Body ="Een nieuwe gebruiker geregistreerd op ".$this->sitename."\r\n".
+        "Naam: ".$formvars['name']."\r\n".
+        "Email: ".$formvars['email']."\r\n".
         "UserName: ".$formvars['username'];
         
         if(!$mailer->Send())
@@ -1292,7 +1292,7 @@ class FGMembersite
     {
         if(!$this->DBLogin())
         {
-            $this->HandleError("Database login failed!");
+            $this->HandleError("Database login mislukt!");
             return false;
         }
         if(!$this->Ensuretable())
@@ -1301,13 +1301,13 @@ class FGMembersite
         }
         if(!$this->IsFieldUnique($formvars,'email'))
         {
-            $this->HandleError("This email is already registered");
+            $this->HandleError("Dit email staat al geregistreerd");
             return false;
         }
         
 	    if(!$this->IsFieldUnique($formvars,'username'))
         {
-            $this->HandleError("This UserName is already used. Please try another username");
+            $this->HandleError("Deze gebruikersnaam bestaat al, probeer een andere");
             return false;
         } 
               

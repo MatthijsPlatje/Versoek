@@ -1,0 +1,380 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.nav_img {
+    background-image: url("../../images/header_300px.png");
+    min-height: 100px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+.nav_img img {
+    position: absolute;
+    left: 0px;
+}
+
+.nav_container {
+    position: absolute;
+    right: 0px;
+    padding-right: 40px;
+}
+
+.nav {
+    background-color: hsla(0, 0%, 100%, 0);
+    padding-top: 40px;
+}
+
+main {
+    height: 270px;
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 240px;
+    padding-right: 240px;
+}
+
+.main_end {
+    background-image: url("../../images/main_end.png");
+    min-height: 90px;
+    width: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    left: 25%;
+}
+
+.launch_info {
+    background-color: #F5F5F5;
+    padding-top: 10px;
+}
+
+.launch_info_end {
+    background-image: url("../../images/launch_info_end.png");
+    min-height: 90px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.container3_begin {
+    background-image: url("../../images/container3_begin.png");
+    min-height: 90px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+.container3_end {
+    background-image: url("../../images/container3_end.png");
+    min-height: 90px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.flex-child:first-child {
+    margin-right: 0px;
+}
+
+.flex-container-2 {
+    display: flex;
+}
+
+.flex-child-2 {
+    flex: 1;
+    text-align: center;
+}
+
+h1 {
+    font-size: 80px;
+    color: black;
+}
+
+p {
+    font-size: 18px;
+    color: black;
+}
+
+.eind2024 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.button_lees_meer {
+    background-color: rgb(61, 204, 209);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 10px 12px 10px;
+    border-radius: 12px;
+}
+
+.button_meld_aan {
+    background-color: #7448b1;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px 12px 20px;
+    border-radius: 12px;
+}
+
+a {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact {
+    color: white;
+    background-color: #7448b1;
+    text-decoration: none;
+}
+
+.voor_jou {
+    background-color: rgb(252, 244, 164);
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px 12px 20px;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.door_jou {
+    background-color: #f5f5f5;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px 12px 20px;
+    border-radius: 12px;
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px 12px 20px;
+    border-radius: 12px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.332);
+    padding-top: 42px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 10px;
+    width: 60%;
+    left: 20%;
+    position: relative;
+    color: rgb(240, 240, 240);
+}
+
+footer a {
+    color: orange
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+.join_community {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.join_title {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(240, 240, 240);
+}
+
+.join_text {
+    font-size: 24px;
+    color: rgb(240, 240, 240);
+    line-height: 8px;
+}
+
+.spacer20px {
+    height: 20px;
+}
+
+.container_nav {
+    background-color: #F5F5F5;
+    background-image: url(../../images/35d470_cbec3012ed41436e9e32893c4b529ad0_mv2.webp);
+    background-size: cover;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: #F5F5F5;
+    background-image: url(../../images/pexels_light.jpg);
+    background-size: cover;
+}
+
+.container2 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: white;
+}
+
+.container3 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: #F5F5F5;
+    background-image: url(../../images/091020-teen-student-cell-phone-text-social-media-adobestock_296398583_blue.jpeg);
+    background-size: cover;
+}
+
+.flex-container-3 {
+    display: flex;
+    padding-bottom: 50px;
+}
+
+.flex-child-3 {
+    flex: 1;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 20px;
+    background-color: #F5F5F5;
+}
+
+.container4 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: white;
+}
+
+.container4-div {
+    padding-top: 20px;
+    margin-left: 10%;
+}
+
+.container4-div-end {
+    margin-top: 32px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.flex-container-4 {
+    display: flex;
+}
+
+.flex-child-4 {
+    flex: 1;
+    text-align: left;
+    margin-right: 8%;
+    background-color: #F5F5F5;
+}
+
+.flex-child-4:first-child {
+    margin-left: 10%;
+}
+
+.flex-child-4:last-child {
+    margin-right: 10%;
+}
+
+.flex-child-4 a {
+    color: rgb(61, 204, 209);
+    padding-left: 4px;
+}
+
+.flex-child-4 h2 {
+    margin-bottom: 5px;
+    padding-left: 4px;
+}
+
+.flex-child-4 p {
+    margin-top: 5px;
+    padding-left: 4px;
+}
+
+hr {
+    margin-top: 40px;
+}
+
+.date_of_article {
+    background-color: #F5F5F5;
+    outline: none;
+    font-size: 12px;
+    padding-left: 4px;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: rgb(61, 204, 209);;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: rgb(51, 194, 199);
+  }
+
+  /* Add a background color and some padding around the form */
+.contact_form {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    padding: 32px;
+  }
