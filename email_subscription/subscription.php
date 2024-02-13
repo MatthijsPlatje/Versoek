@@ -70,23 +70,23 @@ if(isset($_POST['subscribe']))
                 $mailer = new PHPMailer(true);
                 $mailer->SMTPDebug = SMTP::DEBUG_SERVER;
                 $mailer->IsSMTP();
-                $mailer->Host = "smtp.gmail.com";
-                $mailer->Port = 465;
+                $mailer->Host = "smtp.example.com";
+                $mailer->Port = 666;
                 $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                 $mailer->SMTPAuth = true;
-                $mailer->Username = "mplatje@gmail.com";
-                $mailer->Password = "piqpxlbopjpolnds";
+                $mailer->Username = "user@example.com";
+                $mailer->Password = "password";
                 
                 $mailer->AddAddress($email, $name);
                 $mailer->Subject = "Bevestigen aanmelden nieuwsbrief Versoek.nl";
                 // $mailer->From = "info@versoek.nl";
-                $mailer->Sender='info@yversoek.nl';
-                $mailer->SetFrom('info@yversoek.nl', 'Versoek.nl');
+                $mailer->Sender='info@versoek.nl';
+                $mailer->SetFrom('info@versoek.nl', 'Versoek.nl');
                 $mailer->AddReplyTo('info@versoek.nl', 'Info Versoek');
                 $link = $siteURL.'subscription.php?email_verify='.$verify_code;
 
                 $mailer->Body ="Hello ".$name."\r\n\r\n".
-                    "Bedankt voor je interesse in Carpool van Versoek!\r\n\r\n".
+                    "Bedankt voor je interesse in Versoek!\r\n\r\n".
                     "Klik op onderstaande link om je email adres te bevestigen:\r\n".$link."\r\n\r\n".
                     "Met vriendelijke groet,\r\n\r\n".
                     "Versoek";
@@ -148,12 +148,12 @@ else if(isset($_POST['send_email']))
         $mailer = new PHPMailer(true);
         $mailer->SMTPDebug = SMTP::DEBUG_SERVER;
         $mailer->IsSMTP();
-        $mailer->Host = "smtp.gmail.com";
-        $mailer->Port = 465;
+        $mailer->Host = "smtp.example.com";
+        $mailer->Port = 666;
         $mailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mailer->SMTPAuth = true;
-        $mailer->Username = "mplatje@gmail.com";
-        $mailer->Password = "piqpxlbopjpolnds";
+        $mailer->Username = "user@example.com";
+        $mailer->Password = "password";
         
         $mailer->AddAddress($email, $name);
         $mailer->Subject = "Bericht verstuurt naar Versoek.nl";
@@ -170,12 +170,12 @@ else if(isset($_POST['send_email']))
             $mailer2 = new PHPMailer(true);
             $mailer2->SMTPDebug = SMTP::DEBUG_SERVER;
             $mailer2->IsSMTP();
-            $mailer2->Host = "smtp.gmail.com";
-            $mailer2->Port = 465;
+            $mailer2->Host = "smtp.example.com";
+            $mailer2->Port = 666;
             $mailer2->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mailer2->SMTPAuth = true;
-            $mailer2->Username = "mplatje@gmail.com";
-            $mailer2->Password = "piqpxlbopjpolnds";
+            $mailer2->Username = "user@example.com";
+            $mailer2->Password = "password";
             
             $mailer2->AddAddress("info@versoek.nl", "Team Versoek");
             $mailer2->Subject = "Bericht via contactformulier Versoek.nl";
